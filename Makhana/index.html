@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Flickerfoxnuts — premium Makhana (foxnuts) from Bihar. Pure, nutritious superfood for every age." />
+  <meta name="description" content="Flicker Global — premium export-grade foxnuts (makhana) from Bihar, India. Transparent sourcing, reliable global supply." />
   <meta name="theme-color" content="#1a4d2e" />
   <title>Flickerfoxnuts — Premium Makhana</title>
+  <link rel="icon" href="assets/favicon-48.png?v=3" type="image/png" sizes="48x48" />
+  <link rel="icon" href="assets/favicon-32.png?v=3" type="image/png" sizes="32x32" />
+  <link rel="icon" href="assets/favicon.png?v=3" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=3" sizes="180x180" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -18,6 +22,7 @@
       <span class="fog fog-2"></span>
       <span class="fog fog-3"></span>
       <span class="fog fog-4"></span>
+      <div class="leaves-layer" id="windParticles" aria-hidden="true"></div>
     </div>
     <div class="night-sky">
       <div class="stars stars-far"></div>
@@ -30,64 +35,251 @@
     </div>
   </div>
   <a class="skip-link" href="#main">Skip to content</a>
-  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Change theme">
-    <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
-    <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
-  </button>
 
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">🪷 Flickerfoxnuts</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links nav-links--desktop" aria-label="Primary">
+        <li><a href="#about">About</a></li>
+        <li><a href="#supply">We Supply</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#nutrition">Nutrition</a></li>
         <li><a href="#benefits">Benefits</a></li>
         <li><a href="#ages">For All Ages</a></li>
       </ul>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Change theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#supply">We Supply</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#nutrition">Nutrition</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#ages">For All Ages</a></li>
+    </ul>
+  </div>
+
   <main id="main">
-  <header class="hero" id="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">
-          <span class="title-green">Foxnuts</span>
-          <span class="title-orange">(Makhana)</span>
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <header class="hero hero-unified" id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title" id="about-heading">
+          <span class="title-green">Welcome to</span>
+          <span class="about-brand">Flicker Global</span>
         </h1>
-        <p class="hero-tagline">A Superfood from Nature – Pure, Nutritious &amp; Timeless</p>
-        <p class="hero-sub">Grown in the pristine ponds of Bihar, loved across the world</p>
-        <div class="hero-actions">
+        <p class="hero-tagline">
+          <span class="title-orange">Foxnuts (Makhana)</span> — A Superfood from Nature
+        </p>
+        <p class="hero-sub about-lead about-reveal">
+          An emerging Indian export company focused on supplying <strong>premium quality foxnuts (makhana)</strong> to global markets with transparency and reliable service.
+        </p>
+        <p class="hero-sub about-reveal">From Bihar&apos;s finest farms to buyers worldwide.</p>
+        <div class="hero-badges about-reveal">
+          <div class="badge" data-color="green">
+            <span class="badge-icon">🇮🇳</span>
+            <span>Bihar Origin</span>
+          </div>
+          <div class="badge" data-color="purple">
+            <span class="badge-icon">🌾</span>
+            <span>Gluten Free</span>
+          </div>
+          <div class="badge" data-color="orange">
+            <span class="badge-icon">📦</span>
+            <span>Export Grade</span>
+          </div>
+          <div class="badge" data-color="red">
+            <span class="badge-icon">🤝</span>
+            <span>Trust First</span>
+          </div>
+        </div>
+        <div class="hero-actions about-reveal">
           <a href="#process" class="btn btn-primary">Explore Our Process</a>
-          <a href="#nutrition" class="btn btn-ghost">See Nutrition</a>
+          <a href="#benefits" class="btn btn-ghost">See Health Benefits</a>
         </div>
       </div>
-      <div class="hero-badges">
-        <div class="badge" data-color="green">
-          <span class="badge-icon">🌿</span>
-          <span>100% Natural</span>
+      <div class="hero-visual about-reveal">
+        <div class="about-visual-wrap">
+          <div class="about-image-frame">
+            <img src="assets/makhana.png" alt="Premium export-grade foxnuts (makhana)" class="soft-img makhana-img about-hero-img" width="320" height="320" loading="eager" decoding="async" />
+            <div class="about-image-ring" aria-hidden="true"></div>
+          </div>
+          <span class="about-float-chip">Pure · Nutritious · Timeless</span>
         </div>
-        <div class="badge" data-color="purple">
-          <span class="badge-icon">🌾</span>
-          <span>Gluten Free</span>
+      </div>
+    </header>
+
+    <div class="about-inner">
+      <div class="about-intro about-reveal">
+        <p class="section-eyebrow">Our story</p>
+        <h2 class="about-intro-title">Built on Bihar roots. Driven by global trust.</h2>
+        <p class="about-intro-text">
+          Welcome to <strong>Flicker Global</strong> — an emerging Indian export company focused on supplying premium quality foxnuts (makhana) to global markets with transparency and reliable service.
+        </p>
+      </div>
+
+      <div class="about-slider about-reveal" id="aboutSlider" aria-roledescription="carousel" aria-label="About Flicker Global">
+        <div class="about-slider-track" id="aboutSliderTrack">
+          <article class="about-slide is-active" data-slide="0" aria-label="1 of 4">
+            <div class="about-slide-media">
+              <img src="assets/Harvesting%20From%20Ponds.png" alt="Makhana farming in Bihar ponds" class="soft-img about-slide-img--top" loading="lazy" decoding="async" />
+            </div>
+            <div class="about-slide-body">
+              <span class="about-slide-tag">01 · Roots</span>
+              <h3>Deeply connected to Bihar</h3>
+              <p>Although we are a new company in the export sector, our roots are deeply connected with the traditional foxnuts (makhana) farming ecosystem of Bihar, India — the world&apos;s largest makhana-producing region.</p>
+              <p>A part of our family has long been involved in farming and local sourcing activities, giving us practical knowledge of crop quality, grading, roasting standards and seasonal supply conditions.</p>
+            </div>
+          </article>
+
+          <article class="about-slide" data-slide="1" aria-label="2 of 4" aria-hidden="true">
+            <div class="about-slide-media">
+              <img src="assets/Sun%20Drying%20%26%20Sorting.png" alt="Sorting and quality checks for makhana" class="soft-img" loading="lazy" decoding="async" />
+            </div>
+            <div class="about-slide-body">
+              <span class="about-slide-tag">02 · Quality</span>
+              <h3>Strict checks, farm to dispatch</h3>
+              <p>This direct ground-level understanding helps us maintain strict quality checks from sourcing to final dispatch.</p>
+              <p>At Flicker Global, we work closely with farmers, processors and local suppliers to source export-grade makhana with proper sorting, moisture control and hygienic packaging.</p>
+            </div>
+          </article>
+
+          <article class="about-slide" data-slide="2" aria-label="3 of 4" aria-hidden="true">
+            <div class="about-slide-media">
+              <img src="assets/Roasting%20%26%20Flavoring.png" alt="Export grade makhana processing" class="soft-img about-slide-img--top" loading="lazy" decoding="async" />
+            </div>
+            <div class="about-slide-body">
+              <span class="about-slide-tag">03 · Consistency</span>
+              <h3>Built for international buyers</h3>
+              <p>We understand that consistency, freshness and uniform grading are critical for international buyers, especially in repeat shipments.</p>
+              <ul class="about-slide-points">
+                <li>Export-grade sorting</li>
+                <li>Moisture control</li>
+                <li>Hygienic packaging</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="about-slide" data-slide="3" aria-label="4 of 4" aria-hidden="true">
+            <div class="about-slide-media">
+              <img src="assets/makhana.png" alt="Premium foxnuts from India" class="soft-img makhana-img about-slide-makhana" loading="lazy" decoding="async" />
+            </div>
+            <div class="about-slide-body">
+              <span class="about-slide-tag">04 · Trust</span>
+              <h3>Win-win partnerships</h3>
+              <p>We believe in building trust and long-term relationships with our business partners. At Flicker Global, trust can never be compromised.</p>
+              <p>We always aim to create a win-win business environment for both us and our customers through transparency, consistency and reliable service.</p>
+            </div>
+          </article>
         </div>
-        <div class="badge" data-color="orange">
-          <span class="badge-icon">☀️</span>
-          <span>Rich in Nutrition</span>
+
+        <div class="about-slider-controls">
+          <button type="button" class="about-slider-btn" id="aboutPrev" aria-label="Previous slide">‹</button>
+          <div class="about-slider-dots" id="aboutDots" role="tablist" aria-label="About slides">
+            <button type="button" class="about-dot is-active" data-index="0" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button type="button" class="about-dot" data-index="1" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button type="button" class="about-dot" data-index="2" aria-label="Go to slide 3" aria-selected="false"></button>
+            <button type="button" class="about-dot" data-index="3" aria-label="Go to slide 4" aria-selected="false"></button>
+          </div>
+          <button type="button" class="about-slider-btn" id="aboutNext" aria-label="Next slide">›</button>
         </div>
-        <div class="badge" data-color="red">
-          <span class="badge-icon">❤️</span>
-          <span>Good for All Ages</span>
+        <p class="about-slider-hint">Swipe or use arrows to explore</p>
+      </div>
+
+      <div class="about-highlights about-reveal" aria-label="Company highlights">
+        <article class="about-highlight">
+          <span class="about-highlight-icon" aria-hidden="true">🇮🇳</span>
+          <h3>Bihar Origin</h3>
+          <p>World&apos;s largest makhana-producing region</p>
+        </article>
+        <article class="about-highlight">
+          <span class="about-highlight-icon" aria-hidden="true">✓</span>
+          <h3>Quality First</h3>
+          <p>Checks from sourcing to final dispatch</p>
+        </article>
+        <article class="about-highlight">
+          <span class="about-highlight-icon" aria-hidden="true">🤝</span>
+          <h3>Trust Always</h3>
+          <p>Transparent, long-term partnerships</p>
+        </article>
+        <article class="about-highlight">
+          <span class="about-highlight-icon" aria-hidden="true">🌍</span>
+          <h3>Global Ready</h3>
+          <p>Premium export supply with reliable service</p>
+        </article>
+      </div>
+
+      <blockquote class="about-quote about-reveal">
+        <p>We bring you the finest foxnuts (makhana) directly from India&apos;s best farms.</p>
+      </blockquote>
+
+      <div class="about-supply-block" id="supply">
+        <div class="about-supply-header about-reveal">
+          <p class="section-eyebrow">What we offer</p>
+          <h2 class="about-supply-title">We Supply</h2>
+          <p class="about-supply-lead">
+            Presently, we supply only <strong>Raw Foxnuts (Makhana)</strong> with suitable export packaging designed for moisture control and maintaining hygiene standards during storage and transit. The size of each piece can be sorted.
+          </p>
+        </div>
+        <div class="supply-slider about-reveal" id="supplySlider" aria-label="What we supply">
+          <div class="supply-slider-track">
+            <article class="supply-card supply-card--slide">
+              <div class="supply-card-icon" aria-hidden="true">📦</div>
+              <h3>Raw Foxnuts (Makhana)</h3>
+              <p>Suitable export packaging designed for moisture control and maintaining hygiene standards during storage and transit.</p>
+              <p class="supply-note-inline">The size of each foxnut piece will be as per customer requirements — sorted manually by us.</p>
+            </article>
+            <article class="supply-card supply-card--slide">
+              <div class="supply-card-icon" aria-hidden="true">🌐</div>
+              <h3>Export Terms</h3>
+              <p>Exports can be arranged as per the buyer&apos;s required Incoterms, including FOB, CFR, CIF and Letter of Credit (LC) transactions.</p>
+              <ul class="incoterm-tags" aria-label="Supported Incoterms">
+                <li>FOB</li>
+                <li>CFR</li>
+                <li>CIF</li>
+                <li>Letter of Credit (LC)</li>
+              </ul>
+            </article>
+            <article class="supply-card supply-card--slide">
+              <div class="supply-card-icon" aria-hidden="true">⚓</div>
+              <h3>Ports &amp; Logistics</h3>
+              <p>Our preferred export gateways are <strong>East Indian ports</strong> due to their proximity to the sourcing and manufacturing locations, which helps in maintaining product quality and operational efficiency.</p>
+              <p>However, shipments can be arranged from any Indian port depending on buyer requirements and logistics feasibility.</p>
+            </article>
+            <article class="supply-card supply-card--slide">
+              <div class="supply-card-icon" aria-hidden="true">🔍</div>
+              <h3>Surveyor Support</h3>
+              <p>We also have independent surveyor support available at major Indian ports for export supervision and shipment coordination.</p>
+              <p>Additionally, we welcome buyer-appointed surveyors at loading ports to ensure complete transparency and confidence during cargo handling and dispatch procedures.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-benefits-banner about-reveal">
+        <div class="about-benefits-visual">
+          <img src="assets/Harvesting%20From%20Ponds.png" alt="Makhana harvesting from ponds in Bihar" class="soft-img about-benefits-img" width="520" height="400" loading="lazy" decoding="async" />
+          <div class="about-benefits-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="about-benefits-content">
+          <p class="section-eyebrow">Superfood spotlight</p>
+          <h2>Benefits of Foxnuts (Makhana)</h2>
+          <p>Nature&apos;s light, crunchy superfood — gluten-free, nutrient-rich and loved across every age. Discover why makhana is gaining global demand.</p>
+          <a href="#benefits" class="btn btn-primary">Explore Health Benefits</a>
         </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <img src="assets/makhana.png" alt="Bowl of roasted makhana" class="soft-img makhana-img hero-makhana-float" width="280" height="280" loading="lazy" decoding="async" />
-</div>
-  </header>
+  </section>
 
   <section class="section process-section" id="process">
     <p class="section-eyebrow">From pond to plate</p>
@@ -364,14 +556,21 @@
     <div class="footer-contact">
       <div class="footer-contact-item">
         <span class="contact-label">Phone Number</span>
-        <a href="tel:+917781841285">+91 7781841285</a>
+        <div class="contact-link-row">
+          <a href="tel:+917781841285">+91 7781841285</a>
+          <button type="button" class="copy-btn" data-copy-value="+91 7781841285" aria-label="Copy phone number">Copy</button>
+        </div>
       </div>
       <div class="footer-contact-item">
         <span class="contact-label">Email Address</span>
-        <a href="mailto:flickerfoxnuts@gmail.com">flickerfoxnuts@gmail.com</a>
+        <div class="contact-link-row">
+          <a href="mailto:flickerfoxnuts@gmail.com">flickerfoxnuts@gmail.com</a>
+          <button type="button" class="copy-btn" data-copy-value="flickerfoxnuts@gmail.com" aria-label="Copy email address">Copy</button>
+        </div>
       </div>
     </div>
     <div class="footer-bar">
+    <div class="footer-item"><span>🏢</span> Flicker Global (OPC) Pvt. Ltd.</div>
     <div class="footer-item"><span>🌿</span> Pure by Nature</div>
     <div class="footer-item"><span>🍲</span> Nourishing by Tradition</div>
     <div class="footer-item"><span>👨‍👩‍👧‍👦</span> Loved by Generations</div>
